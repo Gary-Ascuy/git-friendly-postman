@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "97d729c1-ac26-46b9-ad21-1cc452fb6f10",
+		"name": "EchoNekoApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "157309"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "CreateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Body should contains Gary Ascuy as owner'\", function () {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.method).to.eql('POST');",
+									"});",
+									"",
+									"pm.test(\"Body should contains Gary Ascuy as owner'\", function () {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.data.name).to.eql('Gary Ascuy');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gary Ascuy\",\n    \"bio\": \"Software Developer, Robotics & Cats Lover, Chef Amateur\",\n    \"stack\": \"Java with GraalVM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://echo.nekoverse.me/api/v1/user",
+							"protocol": "https",
+							"host": [
+								"echo",
+								"nekoverse",
+								"me"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Method should contains 'GET'\", function () {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.method).to.eql('GET');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://echo.nekoverse.me/api/v1/users?name=Gary&age=666",
+							"protocol": "https",
+							"host": [
+								"echo",
+								"nekoverse",
+								"me"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Gary"
+								},
+								{
+									"key": "age",
+									"value": "666"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "GetAllPets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name\", function () {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.args.limit).to.eql(\"100\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://echo.nekoverse.me/api/v1/pets?limit=100",
+							"protocol": "https",
+							"host": [
+								"echo",
+								"nekoverse",
+								"me"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pets"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://echo.nekoverse.me/api/v1/test",
+					"protocol": "https",
+					"host": [
+						"echo",
+						"nekoverse",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
