@@ -46,7 +46,7 @@ jobs:
       - run: |
           echo "Preparing to publish git-friendly-postman@${NPM_VERSION}"
           npm install -g pnpm
-          pnpm version --force $NPM_VERSION
+          pnpm version --force --git-tag-version false --commit-hooks false $NPM_VERSION
           pnpm install
           pnpm publish
         env:
