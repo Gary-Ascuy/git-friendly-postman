@@ -27,7 +27,7 @@ async function main(inputFile, outputFile, options) {
         process.exit(0)
     }
 
-    await run(inputFile, outputFile)
+    await run(inputFile, outputFile, options)
     process.exit(0)
 }
 

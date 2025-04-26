@@ -16,7 +16,7 @@ export async function clean({ verbose }) {
         log(`Removing temporal output file: ${outputFile}`, verbose)
         await fs.rm(outputFile)
 
-        log(`Removing git-friendly-postman config: ${CONFIG_FILE}`, verbose)
+        log(`Removing config file: ${CONFIG_FILE}`, verbose)
         await fs.rm(CONFIG_FILE)
     } catch (e) {
         log(e, verbose)
