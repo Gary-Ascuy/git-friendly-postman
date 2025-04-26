@@ -4,6 +4,18 @@
 
 Postman collections are stored in JSON format, which can be lengthy and complex. This makes it challenging to manage changes in Git repositories, as large JSON files are harder to track and review. Additionally, updating the file without using the Postman UI can be cumbersome and prone to errors.
 
+## Install 
+
+```sh
+npm install -g git-friendly-postman
+```
+
+Test 
+
+```
+git-friendly-postman --help
+```
+
 ## Example
 
 now you are able to organize your collection in YAML using `!!import/single` like this:
