@@ -6,15 +6,43 @@ Postman collections are stored in JSON format, which can be lengthy and complex.
 
 ## Example
 
-- `./sample/collection`
+now you are able to organize your collection in YAML using `!!import/single` like this:
+
+```yaml
+info:
+  _postman_id: 97d729c1-ac26-46b9-ad21-1cc452fb6f10
+  name: EchoNekoApi
+  schema: https://schema.getpostman.com/json/collection/v2.1.0/collection.json
+  _exporter_id: '157309'
+
+item:
+  - name: Users
+    item:
+      - !!import/single users/create-user.request.yaml
+      - !!import/single users/get-all-users.request.yaml
+
+  - name: Pets
+    item:
+      - !!import/single pets/get-all-pets.request.yaml
+
+  - !!import/single test.request.yaml
+```
+
+With the following folders:
+
+- Sample: [./sample/collection](https://github.com/Gary-Ascuy/git-friendly-postman/tree/main/sample/collection)
     - `pets`
+        - `get-all-pets.request.yaml`
     - `users`
+        - `create-user.request.yaml`
+        - `get-all-users.request.yaml`
     - `test.request.yaml`
     - `postman.yaml`
 
+And use the following command to run the collection into your CI/CD:
+
 ```sh
-git-friendly-postman --verbose \
-    ./sample/collection/postman.yaml \
+git-friendly-postman --verbose ./sample/collection/postman.yaml \
 && postman collection run ./sample/collection/postman.json \
 && git-friendly-postman --verbose --clean
 ```
