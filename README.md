@@ -62,9 +62,9 @@ With the following folders:
 And use the following command to run the collection into your CI/CD:
 
 ```sh
-git-friendly-postman --verbose ./sample/collection/postman.yaml \
-&& postman collection run ./sample/collection/postman.json \
-&& git-friendly-postman --verbose --clean
+git-friendly-postman --verbose ./sample/collection/postman.yaml
+postman collection run ./sample/collection/postman.json
+git-friendly-postman --verbose --clean
 ```
 
 
@@ -78,10 +78,15 @@ git-friendly-postman ./collection.yaml && postman collection run ./collection.js
 
 Example with logs
 ```sh
+# Creates temp collection.json same name same path
 git-friendly-postman --verbose \
-    ./sample/git-friendly-collection/EchoNekoApi.postman_collection.yaml \
-&& postman collection run ./sample/git-friendly-collection/EchoNekoApi.postman_collection.json \
-&& git-friendly-postman --verbose --clean
+    ./sample/git-friendly-collection/EchoNekoApi.postman_collection.yaml
+
+# Run postman collection
+postman collection run ./sample/git-friendly-collection/EchoNekoApi.postman_collection.json
+
+# Removes json and cache files
+git-friendly-postman --verbose --clean
 ```
 
 ## Export 
