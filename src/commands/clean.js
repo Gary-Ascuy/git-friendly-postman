@@ -9,7 +9,12 @@ export async function load() {
 
 export async function clean() {
     const config = load()
-    console.log(config)
 
-    await fs.rm(CONFIG_FILE)
+    try {
+        await fs.rm(config['git-friendly-postman'].outputFile)
+        await fs.rm(CONFIG_FILE)
+    } catch (e) {
+        console.log("Unable to remove files")
+        process.exit(1)
+    }
 }
