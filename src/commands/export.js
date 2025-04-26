@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { dump } from 'js-yaml'
 
 import { log } from './logger.js'
 
