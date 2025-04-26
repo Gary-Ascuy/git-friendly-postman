@@ -48,7 +48,7 @@ jobs:
           npm install -g pnpm
           pnpm version --force --git-tag-version false --commit-hooks false $NPM_VERSION
           pnpm install
-          pnpm publish
+          pnpm publish --no-git-checks
         env:
           NPM_VERSION: ${{steps.get_version.outputs.version-without-v}}
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
