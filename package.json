@@ -1,6 +1,6 @@
 {
   "name": "git-friendly-postman",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Git Friendly Postman Tool",
   "main": "./src/main.js",
   "repository": "git@github.com:Gary-Ascuy/git-friendly-postman.git",
@@ -14,6 +14,13 @@
   "scripts": {
     "setup": "pnpm link"
   },
+  "keywords": [
+    "postman",
+    "git",
+    "friendly",
+    "tool",
+    "neko"
+  ],
   "dependencies": {
     "commander": "^13.1.0",
     "js-yaml": "^4.1.0",
