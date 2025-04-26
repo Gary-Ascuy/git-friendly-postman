@@ -7,6 +7,12 @@
   "author": "Gary Ascuy <gary.ascuy@gmail.com>",
   "license": "MIT",
   "private": false,
+  "bin": {
+    "git-friendly-postman": "./src/main.js"
+  },
+  "scripts": {
+    "setup": "pnpm link"
+  },
   "dependencies": {
     "commander": "^13.1.0"
   }
