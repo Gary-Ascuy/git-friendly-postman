@@ -1,6 +1,4 @@
-import { version } from './package.json';
-
-export const VERSION = "0.4.0"
+export const VERSION = "0.5.0"
 export const AUTHOR = 'Gary Ascuy'
 
 export const DESCRIPTION = 'Git Friendly Postman Tool'

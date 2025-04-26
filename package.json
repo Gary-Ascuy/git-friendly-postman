@@ -1,6 +1,6 @@
 {
   "name": "git-friendly-postman",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Git Friendly Postman Tool",
   "main": "./src/main.js",
   "repository": "git@github.com:Gary-Ascuy/git-friendly-postman.git",
