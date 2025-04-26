@@ -12,7 +12,6 @@
     "git-friendly-postman": "./src/main.js"
   },
   "scripts": {
-    "ci": "pnpm test",
     "pretest": "git-friendly-postman --verbose ./sample/collection/postman.yaml",
     "test": "postman collection run ./sample/collection/postman.json",
     "posttest": "git-friendly-postman --verbose --clean"
