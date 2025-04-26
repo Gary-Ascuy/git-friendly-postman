@@ -5,7 +5,7 @@ import { read } from 'yaml-import'
 
 import { CONFIG_FILE, VERSION, AUTHOR } from './constants.js'
 
-export function getConfig(inputFile, outputFile) {
+export function getConfig(inputFile, outputFile, options) {
     return {
         'meta': {
             'version': VERSION,

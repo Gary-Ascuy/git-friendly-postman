@@ -15,6 +15,7 @@ program
     .option('-i,--input-file <path>')
     .option('-o,--output-file <path>')
     .option('-e,--export <path>')
+    .option('--v,--verbose')
     .argument('<string>')
 
 program.parse()
@@ -22,7 +23,7 @@ const options = program.opts()
 
 async function main(inputFile, outputFile, options) {
     if (options.clean) {
-        await clean()
+        await clean(options)
         process.exit(0)
     }
 
