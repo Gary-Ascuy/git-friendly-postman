@@ -63,7 +63,7 @@ And use the following command to run the collection into your CI/CD:
 
 ```sh
 git-friendly-postman --verbose ./sample/collection/postman.yaml
-postman collection run ./sample/collection/postman.json
+newman run ./sample/collection/postman.json
 git-friendly-postman --verbose --clean
 ```
 
@@ -73,7 +73,7 @@ git-friendly-postman --verbose --clean
 It allows you create temporarily a JSON file to execute postman or newman 
 
 ```sh
-git-friendly-postman ./collection.yaml && postman collection run ./collection.json && git-friendly-postman --clean
+git-friendly-postman ./collection.yaml && newman run ./collection.json && git-friendly-postman --clean
 ```
 
 Example with logs
@@ -82,8 +82,8 @@ Example with logs
 git-friendly-postman --verbose \
     ./sample/git-friendly-collection/EchoNekoApi.postman_collection.yaml
 
-# Run postman collection
-postman collection run ./sample/git-friendly-collection/EchoNekoApi.postman_collection.json
+# Run postman collection with newman
+newman run ./sample/git-friendly-collection/EchoNekoApi.postman_collection.json
 
 # Removes json and cache files
 git-friendly-postman --verbose --clean
