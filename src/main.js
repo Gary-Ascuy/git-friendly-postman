@@ -18,7 +18,7 @@ program
     .option('-o,--output-file <path>')
     .option('-e,--export')
     .option('--v,--verbose')
-    .argument('<string>')
+    .argument('[string]')
 
 program.parse()
 const options = program.opts()
@@ -44,5 +44,5 @@ async function main(inputFile, outputFile, options) {
 }
 
 const inputFile = options.file ?? program.args[0]
-const outputFile = options.outputFile ?? inputFile.replace(/\.yaml$/, '.json')
+const outputFile = options.outputFile ?? (inputFile ?? "").replace(/\.yaml$/, '.json')
 main(inputFile, outputFile, options)
