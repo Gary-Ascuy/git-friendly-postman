@@ -7,6 +7,7 @@
   "author": "Gary Ascuy <gary.ascuy@gmail.com>",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "bin": {
     "git-friendly-postman": "./src/main.js"
   },
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "commander": "^13.1.0",
+    "js-yaml": "^4.1.0",
     "yaml-import": "^3.0.0"
   }
 }

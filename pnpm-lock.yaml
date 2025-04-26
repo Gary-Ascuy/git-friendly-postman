@@ -11,6 +11,9 @@ importers:
       commander:
         specifier: ^13.1.0
         version: 13.1.0
+      js-yaml:
+        specifier: ^4.1.0
+        version: 4.1.0
       yaml-import:
         specifier: ^3.0.0
         version: 3.0.0
