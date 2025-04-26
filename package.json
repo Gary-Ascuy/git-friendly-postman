@@ -1,6 +1,6 @@
 {
   "name": "git-friendly-postman",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Git Friendly Postman Tool",
   "main": "./src/main.js",
   "repository": "git@github.com:Gary-Ascuy/git-friendly-postman.git",
@@ -12,7 +12,10 @@
     "git-friendly-postman": "./src/main.js"
   },
   "scripts": {
-    "setup": "pnpm link"
+    "ci": "pnpm test",
+    "pretest": "git-friendly-postman --verbose ./sample/collection/postman.yaml",
+    "test": "postman collection run ./sample/collection/postman.json",
+    "posttest": "git-friendly-postman --verbose --clean"
   },
   "keywords": [
     "postman",
