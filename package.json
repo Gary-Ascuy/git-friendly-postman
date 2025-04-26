@@ -12,9 +12,9 @@
     "git-friendly-postman": "./src/main.js"
   },
   "scripts": {
-    "pretest": "git-friendly-postman --verbose ./sample/collection/postman.yaml",
+    "pretest": "./src/main.js --verbose ./sample/collection/postman.yaml",
     "test": "postman collection run ./sample/collection/postman.json",
-    "posttest": "git-friendly-postman --verbose --clean"
+    "posttest": "./src/main.js --verbose --clean"
   },
   "keywords": [
     "postman",

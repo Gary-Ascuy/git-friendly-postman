@@ -22,7 +22,6 @@ jobs:
           node-version: 20
       - run: |
           npm install -g pnpm
-          pnpm link
           pnpm test
 
   publish-npm:
