@@ -1,4 +1,4 @@
-export const VERSION = "{1.0.0}"
+export const VERSION = "{x.x.x}"
 export const AUTHOR = 'Gary Ascuy'
 
 export const DESCRIPTION = 'Git Friendly Postman Tool'

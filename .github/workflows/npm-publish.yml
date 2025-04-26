@@ -1,19 +1,19 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Publish Package
-
-# on:
-#   release:
-#     types: [created]
+name: NPM - Publish Package
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [created]
+
+# on:
+#   push:
+#     branches:
+#       - main
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,8 +26,8 @@ jobs:
           pnpm install
           pnpm test
 
-  publish:
-    needs: test
+  Publish:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,9 +35,20 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      - id: get_version
+        uses: battila7/get-version-action@v2
+      - name: Update version in constants
+        uses: richardrigutins/replace-in-files@v2
+        with:
+          files: 'src/commands/constants.js'
+          search-text: '{x.x.x}'
+          replacement-text: ${{steps.get_version.outputs.version-without-v}}
       - run: |
+          echo "Preparing to publish git-friendly-postman@${NPM_VERSION}"
           npm install -g pnpm
+          pnpm version --force $NPM_VERSION
           pnpm install
           pnpm publish
         env:
+          NPM_VERSION: ${{steps.get_version.outputs.version-without-v}}
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
