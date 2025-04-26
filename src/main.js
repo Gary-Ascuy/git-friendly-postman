@@ -4,12 +4,13 @@ import { Command } from 'commander'
 
 import { clean } from './commands/clean.js'
 import { run } from './commands/run.js'
+import { DESCRIPTION, VERSION } from './commands/constants.js'
 
 const program = new Command()
 program
     .name('git-friendly-postman')
-    .description('Git Friendly Postman Tool')
-    .version('0.1.0')
+    .description(DESCRIPTION)
+    .version(VERSION)
     .option('--clean')
     .option('-i,--input-file <path>')
     .option('-o,--output-file <path>')
@@ -21,11 +22,11 @@ const options = program.opts()
 
 async function main(inputFile, outputFile, options) {
     if (options.clean) {
-        clean()
+        await clean()
         process.exit(0)
     }
 
-    run(inputFile, outputFile)
+    await run(inputFile, outputFile)
     process.exit(0)
 }
 
