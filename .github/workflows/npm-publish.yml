@@ -51,4 +51,4 @@ jobs:
           pnpm publish --no-git-checks
         env:
           NPM_VERSION: ${{steps.get_version.outputs.version-without-v}}
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
