@@ -1,0 +1,51 @@
+name: CreateUser
+event:
+  - listen: test
+    script:
+      exec:
+        - pm.test("Status code is 200", function () {
+        - '    pm.response.to.have.status(200);'
+        - '});'
+        - ''
+        - >-
+          pm.test("Body should contains Gary Ascuy as owner'", function
+          () {
+        - '    const json = pm.response.json();'
+        - '    pm.expect(json.method).to.eql(''POST'');'
+        - '});'
+        - ''
+        - >-
+          pm.test("Body should contains Gary Ascuy as owner'", function
+          () {
+        - '    const json = pm.response.json();'
+        - '    pm.expect(json.data.name).to.eql(''Gary Ascuy'');'
+        - '});'
+        - ''
+      type: text/javascript
+      packages: {}
+request:
+  method: POST
+  header: []
+  body:
+    mode: raw
+    raw: |-
+      {
+          "name": "Gary Ascuy",
+          "bio": "Software Developer, Robotics & Cats Lover, Chef Amateur",
+          "stack": "Java with GraalVM"
+      }
+    options:
+      raw:
+        language: json
+  url:
+    raw: https://echo.nekoverse.me/api/v1/user
+    protocol: https
+    host:
+      - echo
+      - nekoverse
+      - me
+    path:
+      - api
+      - v1
+      - user
+response: []
