@@ -44,5 +44,5 @@ async function main(inputFile, outputFile, options) {
 }
 
 const inputFile = options.file ?? program.args[0]
-const outputFile = options.outputFile ?? (inputFile ?? "").replace(/\.[yaml|yml]$/, '.json')
+const outputFile = options.outputFile ?? (inputFile ?? "").replace(/\.yaml$/, '.json')
 main(inputFile, outputFile, options)
