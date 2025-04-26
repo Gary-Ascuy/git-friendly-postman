@@ -1,5 +1,13 @@
 # git-friendly-postman
 
+<div align="center">
+
+![Neko Logo](https://raw.githubusercontent.com/nekoverse-api/neko-core/refs/heads/main/Docs/Logo/logo.svg)
+
+</div>
+
+
+
 ## Why do I need this s**t?
 
 Postman collections are stored in JSON format, which can be lengthy and complex. This makes it challenging to manage changes in Git repositories, as large JSON files are harder to track and review. Additionally, updating the file without using the Postman UI can be cumbersome and prone to errors.
